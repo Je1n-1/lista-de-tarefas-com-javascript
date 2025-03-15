@@ -28,5 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
         listaDeCompras.appendChild(itemDaLista);
 
         inputItem.value = ''; // Limpa o campo após adicionar
+        
+        const diaDaSemana = new Date().toLocaleDateString('pt-BR', {weekday: 'long'});
+        const calendario = new Date().toLocaleDateString('pt-BR');
+        const horaAtual = new Date().toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit'});
+
+        const dataElement = document.createElement('p');
+        dataElement.innerText = `${diaDaSemana} (${calendario}) às ${horaAtual}`;
+        dataElement.classList.add('texto-data');
+        itemDaLista.appendChild(dataElement);
+        listaDeCompras.appendChild(itemDaLista);
+
+       
     });
 });
